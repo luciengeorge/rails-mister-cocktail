@@ -1,6 +1,16 @@
 <div class="wrapper">
   <div class="container text-center">
-    <h1><%= @cocktail.name %></h1>
-    <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class:"cocktail-list-link" %>
+    <h1><%= @cocktail.name %>'s ingredients</h1>
+    <ul class="list-group">
+      <% @cocktail.doses.each do |dose| %>
+        <li class="list-group-item">
+          <%= dose.ingredient.name %>
+          <%= link_to dose_path(dose), method: :delete do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class:"cocktail-list-link" %>
   </div>
 </div>

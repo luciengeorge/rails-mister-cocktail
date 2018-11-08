@@ -1,12 +1,21 @@
 <div class="wrapper">
   <div class="container">
     <h1 class="text-center">All Cocktails</h1>
+    <% if Cocktail.count != @cocktails.count %>
+      <% if @cocktails.count.zero? %>
+        <p>We haven't found any cocktails matching your search.</p>
+      <% elsif @cocktails.count == 1 %>
+        <p>We found <%= @cocktails.count %> cocktail.</p>
+      <% else %>
+        <p>We found <%= @cocktails.count %> cocktails.</p>
+      <% end %>
+    <% end %>
     <ul class="list-group">
       <% @cocktails.each do |cocktail| %>
-        <li class="list-group-item"><%= link_to cocktail.name, cocktail_path(cocktail), class:"cocktail-list-link" %>
+        <li class="list-group-item"><h4><%= link_to cocktail.name, cocktail_path(cocktail), class:"cocktail-list-link" %></h4>
           <ul>
-            <% cocktail.ingredients.each do |ingredient| %>
-              <li><%= ingredient.name %></li>
+            <% cocktail.doses.each do |dose| %>
+              <li><strong><%= dose.ingredient.name %></strong> - <%= dose.description %></li>
             <% end %>
           </ul>
         </li>

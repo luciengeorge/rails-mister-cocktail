@@ -27,6 +27,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .btn-primary {
+    margin-right: 30px;
+  }
 }
 
 /* Basic navbar item */
