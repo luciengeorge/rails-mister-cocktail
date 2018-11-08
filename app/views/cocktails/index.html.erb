@@ -3,12 +3,13 @@
     <h1 class="text-center">All Cocktails</h1>
     <ul class="list-group">
       <% @cocktails.each do |cocktail| %>
-        <li class="list-group-item"><%= cocktail.name %></li>
-        <ul>
-          <% cocktail.ingredients.each do |ingredient| %>
-            <li><%= ingredient %></li>
-          <% end %>
-        </ul>
+        <li class="list-group-item"><%= link_to cocktail.name, cocktail_path(cocktail), class:"cocktail-list-link" %>
+          <ul>
+            <% cocktail.ingredients.each do |ingredient| %>
+              <li><%= ingredient.name %></li>
+            <% end %>
+          </ul>
+        </li>
       <% end %>
     </ul>
   </div>

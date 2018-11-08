@@ -12,9 +12,11 @@
 
   <body>
     <div class="navbar-wagon">
-      <%= link_to new_cocktail_path, class:"navbar-wagon-link"  do %>
-        <i class="fas fa-plus"></i> Cocktail
-      <% end %>
+      <div class="navbar-wagon-left">
+        <%= link_to new_cocktail_path, class:"navbar-wagon-link"  do %>
+          <i class="fas fa-plus"></i> Cocktail
+        <% end %>
+      </div>
       <div class="navbar-wagon-right">
         <%= link_to cocktails_path, class:"navbar-wagon-link" do %>
           <i class="fas fa-home"></i>
