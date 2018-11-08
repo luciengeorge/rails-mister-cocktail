@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="container">
+    <h1 class="text-center">All Cocktails</h1>
+    <ul class="list-group">
+      <% @cocktails.each do |cocktail| %>
+        <li class="list-group-item"><%= cocktail.name %></li>
+        <ul>
+          <% cocktail.ingredients.each do |ingredient| %>
+            <li><%= ingredient %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </ul>
+  </div>
+</div>
