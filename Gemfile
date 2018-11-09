@@ -42,6 +42,9 @@ gem 'rest-client'
 # gem to store api keys
 gem 'dotenv-rails', groups: [:development, :test]
 
+# cloudinary gem
+gem 'cloudinary'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
