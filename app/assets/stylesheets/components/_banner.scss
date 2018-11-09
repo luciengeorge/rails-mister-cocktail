@@ -1,0 +1,10 @@
+.banner {
+  height: calc(100vh - 70px);
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 50px;
+}
