@@ -1,5 +1,8 @@
 .banner {
-  height: calc(100vh - 70px);
+  height: 60vh;
+  width: 90vw;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat !important;
   background-size: cover !important;
   display: flex;
@@ -7,4 +10,5 @@
   align-items: center;
   color: white;
   font-size: 50px;
+  margin: 10px auto;
 }

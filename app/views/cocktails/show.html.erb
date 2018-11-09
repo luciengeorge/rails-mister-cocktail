@@ -1,22 +1,31 @@
 <div class="wrapper">
   <div class="container text-center">
-    <h1><%= @cocktail.name %>'s ingredients</h1>
-    <ul class="list-group">
+    <div class="show-page-image" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<%= cl_image_path @cocktail.photo, width: 900, height: 500, crop: :fill %>');">
+      <h2><%= @cocktail.name %></h2>
+    </div>
+    <div class="row">
       <% @cocktail.doses.each do |dose| %>
-        <li class="list-group-item">
-          <%= dose.ingredient.name %>
-          <%= link_to dose_path(dose), method: :delete do %>
-            <i class="fas fa-trash-alt navbar-wagon-link"></i>
-          <% end %>
-        </li>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <div class="avatar" style="background: rgb( <%= rand(0..200) %>, <%= rand(0..200) %>, <%= rand(0..200) %> );">
+            <p><%= dose.ingredient.name %></p>
+            <%= link_to dose_path(dose), method: :delete do %>
+              <i class="fas fa-trash-alt delete-avatar"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-    </ul>
+    </div>
+
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <div class="form-group">
-        <%= f.input :description, class:"form-control" %>
-        <%= f.association :ingredient, class:"select2" %>
+        <%= f.input :description, input_html: { class: 'form-description', placeholder: "Description..." }, label: false %>
+        <%= f.association :ingredient, label: false, selected: 1, input_html: { class: 'form-dropdown' } %>
         <%= f.submit class:"btn btn-primary" %>
       </div>
+    <% end %>
+
+    <%= simple_form_for [@cocktail, @review] do |f| %>
+      <div class="form-group"></div>
     <% end %>
   </div>
 </div>

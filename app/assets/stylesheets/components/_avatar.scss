@@ -1,0 +1,35 @@
+.avatar {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 10px auto;
+  p {
+    margin: auto;
+    font-weight: bold;
+  }
+  &:hover {
+    .delete-avatar {
+      opacity: 1;
+    }
+  }
+}
+
+.delete-avatar {
+  color: #616668;
+  position: absolute;
+  font-size: 50px;
+  top: 50px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 1s ease;
+  &:hover {
+    opacity: 1;
+  }
+}
