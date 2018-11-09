@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to cocktail_path(@review.cocktail)
     else
-      render :new
+      redirect_to cocktail_path(@review.cocktail)
     end
   end
 

@@ -45,6 +45,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 # cloudinary gem
 gem 'cloudinary'
 
+# select2 gem
+gem 'select2-rails'
+
 # carrierwave gem
 gem 'carrierwave', '~> 1.2'
 

@@ -22,3 +22,18 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.new-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.new-form-content {
+  flex-grow: 1;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+}
