@@ -10,6 +10,7 @@ class CocktailsController < ApplicationController
 
   def show
     @dose = Dose.new
+    @review = Review.new
     # show specific cocktail
   end
 

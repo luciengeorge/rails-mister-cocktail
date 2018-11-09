@@ -1,0 +1,31 @@
+.review-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background: white;
+  margin: 10px auto;
+  &:hover {
+    .delete-review {
+      opacity: 1;
+    }
+  }
+}
+
+.stars {
+  color: #FFE501;
+}
+
+.bottom-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-review {
+  color: #616668;
+  opacity: 0;
+  transition: all 1s ease;
+  &:hover {
+    opacity: 1;
+  }
+}

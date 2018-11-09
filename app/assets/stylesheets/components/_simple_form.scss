@@ -1,8 +1,13 @@
-.form-description {
+.form-description, .review-field {
   border-radius: 5px !important;
 }
 
 .new_dose {
-  width: 50%;
-  margin: 10px auto;
+  margin: 10px;
+  flex-grow: 1;
+}
+
+.new_review {
+  margin: 10px;
+  flex-grow: 1;
 }

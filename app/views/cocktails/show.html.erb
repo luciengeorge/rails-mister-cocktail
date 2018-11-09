@@ -16,16 +16,40 @@
       <% end %>
     </div>
 
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <div class="form-group">
-        <%= f.input :description, input_html: { class: 'form-description', placeholder: "Description..." }, label: false %>
-        <%= f.association :ingredient, label: false, selected: 1, input_html: { class: 'form-dropdown' } %>
-        <%= f.submit class:"btn btn-primary" %>
+    <% @cocktail.reviews.each do |review| %>
+      <div class="review-card text-justify">
+        <p><%= review.comment %></p>
+        <div class="bottom-line">
+          <p>
+            <strong>rating: </strong>
+            <% review.rating.times do %>
+              <i class="fas fa-star stars"></i>
+            <% end %>
+          </p>
+          <%= link_to review_path(review), method: :delete do %>
+            <i class="fas fa-trash-alt delete-review"></i>
+          <% end %>
+        </div>
       </div>
     <% end %>
 
-    <%= simple_form_for [@cocktail, @review] do |f| %>
-      <div class="form-group"></div>
-    <% end %>
+    <div class="forms">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <div class="form-group">
+          <%= f.input :description, input_html: { class: 'form-description', placeholder: "Description..." }, label: false, required: true %>
+          <%= f.association :ingredient, label: false, include_blank: "Ingredient", input_html: { class: 'form-dropdown' }, required: true %>
+          <%= f.submit class:"btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+        <div class="form-group">
+          <%= f.input :comment, input_html: { class: 'review-field', placeholder: "Add a review..." },label: false, required: true %>
+          <%= f.input :rating, collection: (0..5), label: false, include_blank: "Rating", required: true %>
+          <%= f.submit class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 </div>
