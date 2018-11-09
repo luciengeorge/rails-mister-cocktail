@@ -28,11 +28,12 @@
   justify-content: space-around;
   align-items: center;
   height: 100vh;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background: white;
 }
 
 .new-form-content {
   flex-grow: 1;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   padding: 20px;
   background: white;
   border-radius: 5px;

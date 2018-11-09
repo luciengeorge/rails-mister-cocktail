@@ -1,7 +1,7 @@
 <%= form_for @cocktail, html: { class: 'new-form-content' } do |f| %>
-<div class="form-group form-class justify-content-center">
+  <div class="form-group form-class justify-content-center">
     <%= f.text_field :name, class:"form-control input", placeholder: "Cocktail's name" %>
     <%= f.file_field :photo, class:"upload-button justify-content-center" %>
     <%= f.submit class:"btn btn-primary submit" %>
-</div>
+  </div>
 <% end %>

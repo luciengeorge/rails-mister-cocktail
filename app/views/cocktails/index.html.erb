@@ -1,10 +1,36 @@
 <div class="wrapper">
   <div class="banner text-center justify-content-center" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.pexels.com/photos/265704/pexels-photo-265704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
       <p><span id="banner-typed-text"></span></p>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#new_cocktail_modal">
+        <i class="fas fa-plus"></i> Cocktail
+      </button>
+  </div>
+  <div class="modal fade" id="new_cocktail_modal" tabindex="-1" role="dialog" aria-labelledby="new_cocktail_modal_title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add your favourite cocktail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <%= form_for @cocktail, html: { class: 'new-form-content' } do |f| %>
+          <div class="modal-body">
+            <div class="form-group form-class justify-content-center">
+              <%= f.text_field :name, class:"form-control input", placeholder: "Cocktail's name" %>
+              <%= f.file_field :photo, class:"upload-button justify-content-center" %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%= f.submit class:"btn btn-primary submit" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="container">
     <h1 class="text-center" id="index-title">All Cocktails</h1>
-    <%= form_tag(cocktails_path, method: :get, class:"form-inline justify-content-center text-center") do %>
+    <%= form_tag("#{cocktails_path}#index-title", method: :get, class:"form-inline justify-content-center text-center") do %>
       <%= text_field_tag(:name, params[:name], placeholder: "Search", class:"form-control") %>
       <%= submit_tag("Search", name: nil, class:"btn btn-primary") %>
     <% end %>

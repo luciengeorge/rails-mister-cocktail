@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   before_action :find_cocktail, only: %i[show destroy]
   def index
+    @cocktail = Cocktail.new
     if params[:name]
       @cocktails = Cocktail.where("name LIKE '%#{params[:name]}%'")
     else
@@ -11,7 +12,6 @@ class CocktailsController < ApplicationController
   def show
     @dose = Dose.new
     @review = Review.new
-    # show specific cocktail
   end
 
   def new
