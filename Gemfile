@@ -45,6 +45,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 # cloudinary gem
 gem 'cloudinary'
 
+# carrierwave gem
+gem 'carrierwave', '~> 1.2'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

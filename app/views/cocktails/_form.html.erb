@@ -1,7 +1,8 @@
-<%= form_for @cocktail, html: { class:"form-inline" } do |f| %>
-<div class="form-group">
-    <%= f.label :name, 'name' %>
-    <%= f.text_field :name, class:"form-control input" %>
-    <%= f.submit class:"btn btn-primary submit" %>
-</div>
+<%= simple_form_for @cocktail do |f| %>
+  <div class="form-group">
+      <%= f.input :name, class:"form-control input", label: false, placeholder: "Cocktail's name" %>
+      <%= f.input :photo, label: false %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit class:"btn btn-primary submit" %>
+  </div>
 <% end %>
