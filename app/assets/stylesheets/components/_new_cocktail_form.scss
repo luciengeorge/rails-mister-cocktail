@@ -1,11 +1,25 @@
-.input {
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  margin: 10px 0 10px 10px !important;
+// .input {
+//   border-top-right-radius: 0 !important;
+//   border-bottom-right-radius: 0 !important;
+//   margin: 10px 0 10px 10px !important;
+// }
+
+// .submit {
+//   border-top-left-radius: 0 !important;
+//   border-bottom-left-radius: 0 !important;
+//   margin: 10px 10px 10px 0 !important;
+// }
+
+.form-class {
+  width: 50%;
+  margin: 10px auto !important;
 }
 
-.submit {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-  margin: 10px 10px 10px 0 !important;
+.upload-button {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.form-class {
+  margin: 20px;
 }

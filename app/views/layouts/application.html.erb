@@ -13,17 +13,13 @@
   <body>
     <div class="navbar-wagon">
       <div class="navbar-wagon-left">
-        <%= link_to new_cocktail_path, class:"navbar-wagon-link"  do %>
-          <i class="fas fa-plus"></i> Cocktail
+        <%= link_to cocktails_path, class:"navbar-wagon-link" do %>
+          <i class="fas fa-home"></i>
         <% end %>
       </div>
       <div class="navbar-wagon-right">
-        <%= form_tag(cocktails_path, method: :get, class:"form-inline") do %>
-          <%= text_field_tag(:name, params[:name], placeholder: "Search", class:"form-control") %>
-          <%= submit_tag("Search", name: nil, class:"btn btn-primary") %>
-        <% end %>
-        <%= link_to cocktails_path, class:"navbar-wagon-link" do %>
-          <i class="fas fa-home"></i>
+        <%= link_to new_cocktail_path, class:"navbar-wagon-link"  do %>
+          <i class="fas fa-plus"></i> Cocktail
         <% end %>
       </div>
     </div>
