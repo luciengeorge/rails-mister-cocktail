@@ -1,8 +1,8 @@
 .review-card {
-  border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   background: white;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   margin: 10px auto;
   &:hover {
     .delete-review {

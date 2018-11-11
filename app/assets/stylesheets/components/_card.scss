@@ -23,3 +23,13 @@
   align-items: center;
   border-radius: 0 0 10px 10px;
 }
+
+
+.trash-link {
+  color: #616668;
+  font-size: 15px;
+  &:hover {
+    color: #da552f;
+    text-decoration: none;
+  }
+}

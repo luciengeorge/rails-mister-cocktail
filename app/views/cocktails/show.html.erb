@@ -33,23 +33,25 @@
       </div>
     <% end %>
 
-    <div class="forms">
-      <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <div class="form-group">
-          <%= f.input :description, input_html: { class: 'form-description', placeholder: "Description..." }, label: false, required: true %>
-          <%= f.association :ingredient, collection: Ingredient.order('name ASC'), label: false, include_blank: "Ingredient", input_html: { class: 'form-dropdown' }, required: true %>
-          <%= f.submit class:"btn btn-primary" %>
-        </div>
-      <% end %>
-
-      <%= simple_form_for [@cocktail, @review] do |f| %>
-        <div class="form-group">
-          <%= f.input :comment, input_html: { class: 'review-field', placeholder: "Add a review..." },label: false, required: true %>
-          <%= f.input :rating, collection: (1..5), label: false, include_blank: "Rating", required: true %>
-          <%= f.submit class:"btn btn-primary" %>
-        </div>
-      <% end %>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <div class="form-group">
+            <%= f.input :description, input_html: { class: 'form-description', placeholder: "Description..." }, label: false, required: true %>
+            <%= f.association :ingredient, collection: Ingredient.all.sort_by { |ingredient| ingredient.name.downcase }, label: false, include_blank: "Ingredient", input_html: { class: 'form-dropdown' }, required: true %>
+            <%= f.submit class:"btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= simple_form_for [@cocktail, @review] do |f| %>
+          <div class="form-group">
+            <%= f.input :comment, input_html: { class: 'review-field', placeholder: "Add a review..." },label: false, required: true %>
+            <%= f.input :rating, collection: (1..5), label: false, include_blank: "Rating", required: true %>
+            <%= f.submit class:"btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
   </div>
 </div>
