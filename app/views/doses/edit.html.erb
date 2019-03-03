@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for @dose do |f| %>
+    <div class="form-group">
+      <%= f.input :description, class:"form-control" %>
+      <%= f.association :ingredient, class:"form-control" %>
+      <%= f.submit class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
